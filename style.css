@@ -2,46 +2,34 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* Mise en page générale (conteneurs) */
 body {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #news, #infos, #actu {
-    border: 2px solid red;
+    padding: 1em 2em;
+    border: 1px solid red;
 }
 
 #header, #news, #actu {
     width: 100%;
 }
 
-#infos {
-    display: none;
-}
 
-/* Pour démo */
+/* Header */
 #header {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(rgba(253, 207, 106, 0.5), rgba(255, 255, 255, 0.5)),
     url("img/ambiance-cuisine.jpg");
+    background-position: center;
     height: 30vh;
 }
 
-#news {
-    background-color: rgb(127, 240, 255);
-}
-
-#infos {
-    background-color: rgb(127, 168, 255);
-}
-
-#actu {
-    background-color: rgb(127, 255, 155);
-}
-
-/* Header */
 #header .logo {
     width: 50%;
 }
@@ -55,13 +43,14 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    cursor: pointer;
 }
 
 #header .hamburger .line {
     display: block;
-    border-bottom: 10px solid rgb(221, 185, 138);
-    height: 15px;
+    background-color:rgb(138, 226, 253);
+    margin: 12px 0;
+    border-radius: 50px;
+    height: 8px;
 }
 
 #header .menu {
@@ -78,11 +67,52 @@ body {
 
 #header .menu ul li {
     text-align: center;
-    padding: 1em;
+}
+
+#header .menu ul li a, .close {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 1em 2em;
+}
+
+#header .menu ul li a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #header #menu:target {
     display: block;
+}
+
+/* Infos */
+#infos {
+    display: none;
+}
+
+#infos ul {
+    list-style-type: disc;
+    padding-left: 1em;
+}
+
+#infos ul li {
+    padding: 0.5em 1em;
+}
+
+/* Actualités */
+#actu article {
+    display: flex;
+    flex-direction: column;
+}
+
+#actu article .img-article {
+    width: 100%;
+    margin: auto;
+}
+
+#actu article .img-article img {
+    width: 100%;
 }
 
 @media (min-width: 720px) {
@@ -101,21 +131,21 @@ body {
 /* Règles pour les écrans larges */
 @media (min-width: 1024px) {
 
-    body {
-        width: 80%;
-        margin: auto;
-    }
-
     #news {
-        width: calc(60% - 8px);
+        width: calc(50% - 8px);
     }
 
     #infos {
-        width: 40%;
+        width: 30%;
         display: block;
-
+        border-left: 1px solid rgba(0, 0, 0, 0.8);
     }
 
+    #actu {
+        width: 80%;
+    }
+
+    /* Header */
     #header {
         display: flex;
     }
@@ -136,7 +166,8 @@ body {
 
     #header .menu ul {
         display: flex;
-        border: 1px solid red;
+        justify-content: flex-end;
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent)
     }
 
     
