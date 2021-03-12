@@ -1,0 +1,41 @@
+
+
+#test {
+    width: 0%;
+    height: 80vh;
+    background-color: rgb(37, 37, 37);
+    transition: width 1.5s linear;   
+}
+
+#test li {
+    display: none;
+    opacity: 0;
+    transition: opacity 1.5s 1.5s linear;
+}
+
+#test li a {
+    display: block;
+    color: white;
+    padding: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#test:target {
+    width: 80%;
+    animation: menu 2s linear 0s 1 forwards;
+}
+
+#test:target li {
+    display: block;
+    animation: menuli 0.5s linear 1.5s 1 forwards;
+}
+
+@keyframes menu {
+    0% {width: 20%;} 
+    100% {width: 100%;}
+}
+
+@keyframes menuli {
+    from {opacity: 0;} 
+    to {opacity: 1;} 
+}
