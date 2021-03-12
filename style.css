@@ -1,29 +1,89 @@
+/* Annulation des marges par défaut */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Mise en page générale (conteneurs) */
 body {
     display: flex;
     flex-wrap: wrap;
 }
 
-#header, #news, #infos, #actu {
+#news, #infos, #actu {
     border: 2px solid red;
 }
 
-#header, 
-#news,
-#actu {
+#header, #news, #actu {
     width: 100%;
 }
-
-
 
 #infos {
     display: none;
 }
 
+/* Pour démo */
+#header {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)),
+    url("img/ambiance-cuisine.jpg");
+    height: 30vh;
+}
+
+#news {
+    background-color: rgb(127, 240, 255);
+}
+
+#infos {
+    background-color: rgb(127, 168, 255);
+}
+
+#actu {
+    background-color: rgb(127, 255, 155);
+}
+
+/* Header */
+#header .logo {
+    width: 50%;
+}
+
+#header .logo img {
+    width: 100%;
+}
+
+#header .hamburger {
+    width: 60px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#header .hamburger .line {
+    display: block;
+    border-bottom: 10px solid rgb(221, 185, 138);
+    height: 15px;
+}
+
+#header .menu {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: none;
+    background-color: rgb(221, 185, 138);
+}
+
+#header .menu ul {
+    list-style: none;
+}
+
+#header .menu ul li {
+    text-align: center;
+    padding: 1em;
+}
+
+#header #menu:target {
+    display: block;
+}
 
 @media (min-width: 720px) {
 
@@ -31,11 +91,20 @@ body {
         display: block;
     }
 
-
+    /* Header */
+    #header .logo {
+        width: 30%;
+    }
 
 }
 
+/* Règles pour les écrans larges */
 @media (min-width: 1024px) {
+
+    body {
+        width: 80%;
+        margin: auto;
+    }
 
     #news {
         width: calc(60% - 8px);
@@ -47,6 +116,29 @@ body {
 
     }
 
+    #header {
+        display: flex;
+    }
 
+    #header .hamburger {
+        display: none;
+    }
+
+    #header .menu {
+        position: inherit;
+        display: block;
+        background-color: transparent;
+    }
+
+    #header .menu .close {
+        display: none;
+    }
+
+    #header .menu ul {
+        display: flex;
+        border: 1px solid red;
+    }
+
+    
 
 }
